@@ -13,6 +13,9 @@ function evalButton(e) {
   if (e.target.className === 'operation') {
     processOperation(e.target.id);
   }
+  if (e.target.className === 'number') {
+    processNumber(e.target.id);
+  }
 }
 function processOperation(e) {
     if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
@@ -21,6 +24,16 @@ function processOperation(e) {
       }
      else {
         tempString.push(e);
+    }
+    document.getElementById("calculator-display").innerHTML = tempString.join("");
+}
+function processNumber(e) {
+    if(tempString.length > 0 && isNaN(tempString[tempString.length - 1]) === false) {
+      var lastIndex = tempString[tempString.length - 1] + e;
+       tempString[tempString.length - 1] = lastIndex;
+    }
+    else {
+    tempString.push(e);
     }
     document.getElementById("calculator-display").innerHTML = tempString.join("");
 }
