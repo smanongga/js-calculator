@@ -16,6 +16,9 @@ function evalButton(e) {
   if (e.target.className === 'number') {
     processNumber(e.target.id);
   }
+  if (e.target.className === 'clear') {
+    clear();
+  }
 }
 function processOperation(e) {
     if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
@@ -35,5 +38,9 @@ function processNumber(e) {
     else {
     tempString.push(e);
     }
+    document.getElementById("calculator-display").innerHTML = tempString.join("");
+}
+function clear() {
+    tempString =[];
     document.getElementById("calculator-display").innerHTML = tempString.join("");
 }
