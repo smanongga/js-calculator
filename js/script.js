@@ -14,3 +14,13 @@ function evalButton(e) {
     processOperation(e.target.id);
   }
 }
+function processOperation(e) {
+    if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
+       tempString[tempString.length - 1] === "*" || tempString[tempString.length - 1] === "+") {
+        tempString.splice(-1,1,e);
+      }
+     else {
+        tempString.push(e);
+    }
+    document.getElementById("calculator-display").innerHTML = tempString.join("");
+}
