@@ -26,9 +26,17 @@ function evalButton(e) {
     processDot();
   }
 }
-function processOperation(e) {
+function checkPrevious() {
     if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
-       tempString[tempString.length - 1] === "*" || tempString[tempString.length - 1] === "+") {
+       tempString[tempString.length - 1] === "*" || tempString[tempString.length - 1] === "+")  {
+          return true;
+      }
+      else {
+        false;
+      }
+}
+function processOperation(e) {
+    if(checkPrevious() === true) {
         tempString.splice(-1,1,e);
       }
      else {
@@ -55,8 +63,7 @@ function processPercentage() {
     document.getElementById("calculator-display").innerHTML = tempString.join("");
 }
 function processDot() {
-    if(tempString.length === 0 || tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
-       tempString[tempString.length - 1] === "*" || tempString[tempString.length - 1] === "+") {
+    if(tempString.length === 0 || checkPrevious() === true) {
       tempString.push(0 + ".");
     }
     else {
