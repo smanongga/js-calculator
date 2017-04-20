@@ -13,3 +13,8 @@
   min-height:65px;
   text-align:right;
 }
+#calculator-button {
+  text-align:center;
+  padding-top:10px;
+  background:#fff;
+}
