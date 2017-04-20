@@ -22,6 +22,9 @@ function evalButton(e) {
   if (e.target.className === 'percentage') {
     processPercentage();
   }
+  if (e.target.className === 'dot') {
+    processDot();
+  }
 }
 function processOperation(e) {
     if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
@@ -49,5 +52,15 @@ function clear() {
 }
 function processPercentage() {
     tempString.splice(-1,1,tempString[tempString.length - 1] / 100);
+    document.getElementById("calculator-display").innerHTML = tempString.join("");
+}
+function processDot() {
+    if(tempString.length === 0 || tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
+       tempString[tempString.length - 1] === "*" || tempString[tempString.length - 1] === "+") {
+      tempString.push(0 + ".");
+    }
+    else {
+      tempString.splice(-1,1,tempString[tempString.length -1] + ".")
+    }
     document.getElementById("calculator-display").innerHTML = tempString.join("");
 }
