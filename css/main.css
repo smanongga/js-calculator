@@ -18,3 +18,10 @@
   padding-top:10px;
   background:#fff;
 }
+#calculator-button button {
+  padding:0;
+  width:90px;
+  font-size:20px;
+  color:#fff;
+  background:#663300;
+}
