@@ -50,4 +50,9 @@ function getButtonValue(e) {
     tempString =[];
     console.log(currentValue);
   }
+  if(e.target.id === "clear") {
+    tempString =[];
+    currentValue = 0;
+    document.getElementById("calculator-display").innerHTML = currentValue;
+  }
 }
