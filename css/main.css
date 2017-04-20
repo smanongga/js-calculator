@@ -31,3 +31,6 @@
 #calculator-button button.operation, #calculator-button button.percentage, #calculator-button button.dot, #calculator-button button.plusminus {
   background:#F5923E;
 }
+#calculator-button button.clear {
+  background:#FF0000;
+}
