@@ -5,6 +5,11 @@
   font-family:sans-serif;
 }
 #calculator-display {
-  color:#000;
+  color:#fff;
   font-size:40px;
+  background:#29292E;
+  margin:10px;
+  padding:10px;
+  min-height:65px;
+  text-align:right;
 }
