@@ -31,4 +31,17 @@ function getButtonValue(e) {
     }
     document.getElementById("calculator-display").innerHTML = tempString.join("");
   }
+  if (e.target.className === 'operation' && e.target.id != "=" && currentValue != undefined) {
+    tempString.push(currentValue);
+    operationValue = e.target.id ;
+    if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" || tempString[tempString.length - 1] === "*" || tempString[tempString.length - 1] === "+") {
+    tempString.splice(-1,1);
+    tempString.push(operationValue);
+    }
+    else {
+       tempString.push(operationValue);
+    }
+    console.log(tempString);
+    document.getElementById("calculator-display").innerHTML = tempString.join("");
+  }
 }
