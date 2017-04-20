@@ -44,4 +44,10 @@ function getButtonValue(e) {
     console.log(tempString);
     document.getElementById("calculator-display").innerHTML = tempString.join("");
   }
+  if(e.target.id === "=") {
+    currentValue = eval(tempString.join(""));
+    document.getElementById("calculator-display").innerHTML = currentValue;
+    tempString =[];
+    console.log(currentValue);
+  }
 }
