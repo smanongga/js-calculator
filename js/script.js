@@ -9,3 +9,6 @@ window.onload = myCalculator;
 function myCalculator() {
   document.getElementById("calculator-button").onclick = getButtonValue;
 }
+function getButtonValue(e) {
+
+}
