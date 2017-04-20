@@ -19,6 +19,9 @@ function evalButton(e) {
   if (e.target.className === 'clear') {
     clear();
   }
+  if (e.target.className === 'percentage') {
+    processPercentage();
+  }
 }
 function processOperation(e) {
     if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
@@ -42,5 +45,9 @@ function processNumber(e) {
 }
 function clear() {
     tempString =[];
+    document.getElementById("calculator-display").innerHTML = tempString.join("");
+}
+function processPercentage() {
+    tempString.splice(-1,1,tempString[tempString.length - 1] / 100);
     document.getElementById("calculator-display").innerHTML = tempString.join("");
 }
