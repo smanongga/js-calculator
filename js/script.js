@@ -25,6 +25,9 @@ function evalButton(e) {
   if (e.target.className === 'dot') {
     processDot();
   }
+  if(e.target.className === 'evaluate') {
+    evaluate();
+  }
 }
 function checkPrevious() {
     if(tempString[tempString.length - 1] === "-" || tempString[tempString.length - 1] === "/" ||
@@ -70,4 +73,9 @@ function processDot() {
       tempString.splice(-1,1,tempString[tempString.length -1] + ".")
     }
     document.getElementById("calculator-display").innerHTML = tempString.join("");
+}
+function evaluate() {
+    document.getElementById("calculator-display").innerHTML = eval(tempString.join(""));
+    tempString = [];
+    tempString.push(document.getElementById("calculator-display").textContent);
 }
