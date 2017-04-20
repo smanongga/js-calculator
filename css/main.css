@@ -1,0 +1,10 @@
+#calculator {
+  width:390px;
+  border:1px solid #000;
+  border-radius: 4px;
+  font-family:sans-serif;
+}
+#calculator-display {
+  color:#000;
+  font-size:40px;
+}
