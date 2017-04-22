@@ -4,7 +4,7 @@ var tempString = [];
 window.onload = myCalculator;
 
 function myCalculator() {
-  document.getElementById("calculator-button").onclick = evalButton;
+  document.querySelector("#calculator-button").onclick = evalButton;
 }
 function evalButton(e) {
   if (e.target.className === 'operation') {
@@ -42,7 +42,7 @@ function processOperation(e) {
      else {
         tempString.push(e);
     }
-    document.getElementById("calculator-display").innerHTML = tempString.join("");
+    document.querySelector("#calculator-display").innerHTML = tempString.join("");
 }
 function processNumber(e) {
     if(tempString.length > 0 && isNaN(tempString[tempString.length - 1]) === false) {
@@ -52,15 +52,15 @@ function processNumber(e) {
     else {
     tempString.push(e);
     }
-    document.getElementById("calculator-display").innerHTML = tempString.join("");
+    document.querySelector("#calculator-display").innerHTML = tempString.join("");
 }
 function clear() {
     tempString =[];
-    document.getElementById("calculator-display").innerHTML = tempString.join("");
+    document.querySelector("#calculator-display").innerHTML = tempString.join("");
 }
 function processPercentage() {
     tempString.splice(-1,1,tempString[tempString.length - 1] / 100);
-    document.getElementById("calculator-display").innerHTML = tempString.join("");
+    document.querySelector("#calculator-display").innerHTML = tempString.join("");
 }
 function processDot() {
     if(tempString.length === 0 || checkPrevious() === true) {
@@ -69,10 +69,10 @@ function processDot() {
     else {
       tempString.splice(-1,1,tempString[tempString.length -1] + ".")
     }
-    document.getElementById("calculator-display").innerHTML = tempString.join("");
+    document.querySelector("#calculator-display").innerHTML = tempString.join("");
 }
 function evaluate() {
-    document.getElementById("calculator-display").innerHTML = eval(tempString.join(""));
+    document.querySelector("#calculator-display").innerHTML = eval(tempString.join(""));
     tempString = [];
-    tempString.push(document.getElementById("calculator-display").textContent);
+    tempString.push(document.querySelector("#calculator-display").textContent);
 }
